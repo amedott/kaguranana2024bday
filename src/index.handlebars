@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kagura Nana 2022 Birthday Project</title>
+  <meta name="description" content="Kagura Nana BDay Project desu.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+
+  <link href="./style.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js"
+  integrity="sha512-CmlPTWm5+a1Gt2YSNk2rGZVvbH3Zge6imS7M4/vrhC8d+A1RcehmLxWMqUdv8aEu7pwfTo74EtnrR+8Cf8KdCA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <div id="particles-js" class="w-screen h-full fixed -z-10"></div>
+    <div class="absolute top-0 right-0">
+      <img src="./img/chili_7.png" width="50" height="50" class="transform -translate-x-2 rotate-12"
+        title="大好きだぁ゛">
+    </div>
+
+    <div class="container mx-auto pt-6 z-10">
+        <section class="container flex flex-col justify-center w-screen h-screen">
+    <h1 class="color:#212629 text-center font-sans text-7xl font-bold p-6" data-aos="fade-in"
+    style="font-family: 'Yomogi', cursive;">
+    ナナちゃん、<br>
+    お誕生日おめでとう！
+    </h1>
+    <h1 class="text-center text-4xl font-normal" data-aos="fade-in">
+        Happy Birthday, Nana-chan!
+      </h1>
+      <p>
+   
+       <section class="container pt-12 pb-6">
+      <h1 class="text-center text-3xl font-normal">Messages from Chililians</h1>
+      <h3 class="text-center text-3xl font-normal" style="font-family: 'Yomogi', cursive;">Chililianからのメッセージ</h3>
+      <div class="container grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center">
+
+            {{#each messages}}
+        <!-- Card -->
+        <div class="w-11/12 md:w-md lg:w-md xl:w-lg rounded shadow-lg bg-white mt-4 mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+          <div class="px-4 py-4">
+            <div class="flex flex-row flex-nowrap justify-between">
+              <div class="flex flex-col">
+                <p class="font-bold text-xl">{{ name }}</p>
+                <p class="text-gray-500 text-sm font-mono">{{ twitter }}</p>
+              </div>
+              <img src="./img/chili_7.png" width="50" height="50"
+                class="transition transform rotate-12 translate-x-4 -translate-y-4 hover:scale-125">
+            </div>
+            <p class="text-gray-700 text-base mt-2">
+              {{ breaklines content }}
+            </p>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </section>
+  </div>
+
+  <script>
+
+  AOS.init({
+    once: true
+  });
+
+particlesJS('particles-js', {
+  "particles": {
+    "number": {
+      "value": 77,
+      "density": {
+        "enable": true,
+        "value_area": 777
+      }
+    },
+    "color": {
+      "value": "#242d33"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 1,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 1,
+        "opacity_min": 0,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 4,
+        "size_min": 0.3,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": false,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1,
+      "direction": "none",
+      "random": true,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 600
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "bubble"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 250,
+        "size": 0,
+        "duration": 2,
+        "opacity": 0,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 400,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+})
+  </script>
+</body>
+</html>
