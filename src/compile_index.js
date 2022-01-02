@@ -23,7 +23,8 @@ records.map(record => {
         timestamp: record[0],
         name: record[1],
         twitter: twitter.trim(),
-        content: record[3]
+        content: record[3],
+        image_link: record[4],
     };
 
     messages.push(message_row);
