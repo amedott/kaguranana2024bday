@@ -25,6 +25,7 @@ records.map(record => {
         twitter: twitter.trim(),
         content: record[3],
         image_link: record[4],
+        video_link: record[5],
     };
 
     messages.push(message_row);
