@@ -6,6 +6,13 @@
   <title>Kagura Nana 2022 Birthday Project</title>
   <meta name="description" content="Kagura Nana BDay Project desu.">
 
+  <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+            </div>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
@@ -56,7 +63,7 @@
               <img src="./img/chili_7.png" width="50" height="50"
                 class="transition transform rotate-12 translate-x-4 -translate-y-4 hover:scale-125">
             </div>
-            <img src="{{ image_link }}">
+            <img class="myImages" id="myImg" src="{{ image_link }}">
             <p class="text-gray-700 text-base mt-2">
               {{ breaklines content }}
             </p>
@@ -100,7 +107,31 @@
 </body>
 
   <script>
+// create references to the modal...
+var modal = document.getElementById('myModal');
+// to all images -- note I'm using a class!
+var images = document.getElementsByClassName('myImages');
+// the image in the modal
+var modalImg = document.getElementById("img01");
+// and the caption in the modal
+var captionText = document.getElementById("caption");
 
+// Go through all of the images with our custom class
+for (var i = 0; i < images.length; i++) {
+  var img = images[i];
+  // and attach our click listener for this image.
+  img.onclick = function(evt) {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+}
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
 
   AOS.init({
     once: true
@@ -216,6 +247,8 @@ particlesJS('particles-js', {
   },
   "retina_detect": true
 })
+
+
   </script>
 </body>
 </html>
