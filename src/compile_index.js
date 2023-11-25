@@ -1,5 +1,5 @@
 const TEMPLATE = "./src/index.handlebars"
-const RESPONSES = "./src/responses.csv"
+const RESPONSES = "./src/response.csv"
 
 const handlebars = require('handlebars');
 const fs = require('fs');
@@ -23,9 +23,7 @@ records.map(record => {
         timestamp: record[0],
         name: record[1],
         twitter: twitter.trim(),
-        content: record[3],
-        image_link: record[4],
-        video_link: record[5],
+        content: record[3]
     };
 
     messages.push(message_row);
